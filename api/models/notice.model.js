@@ -1,25 +1,27 @@
 const mongoose = require('mongoose')
 const noticeSchema = new mongoose.Schema({
-    schoolID: {
+    school: {
         type: mongoose.Schema.ObjectId,
         ref: "School",
     },
-    examDate: {
-        type: Date, 
-        required: true
-    },
-    subject: {
-        type: mongoose.Schema.ObjectId, ref: "Subject"
-    },
-    examType: {
+    title: {
         type: String,
         required: true
     },
-    class: {
-        type: mongoose.Schema.ObjectId,
-        ref: "Class"
+    subject: {
+        type: String,
+        required: true
     },
+    audience: {
+        type: String,
+        enum: [
+            'Student',
+            'teacher'
+        ],
+        required: true
+    },
+    
     createdAt: {type: Date, default: new Date()}
 })
 
-module.exports = mongoose.model("Examination", examinationSchema)
+module.exports = mongoose.model("Notice", noticeSchema)  

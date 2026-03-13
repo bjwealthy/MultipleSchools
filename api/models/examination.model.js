@@ -19,7 +19,10 @@ const examinationSchema = new mongoose.Schema({
         type: mongoose.Schema.ObjectId,
         ref: "Class"
     },
-    createdAt: {type: Date, default: new Date()}
+    createdAt: {
+        type: Date, 
+        default: new Date()
+    }
 })
 
 module.exports = mongoose.model("Examination", examinationSchema)

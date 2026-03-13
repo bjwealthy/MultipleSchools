@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const schoolSchema = new mongooseSchema({
+
+const schoolSchema = new mongoose.Schema({
     school_name: {type: String, required: true},
     email: {type: String, required: true},
     owner_name: {type: String, required: true},
