@@ -100,7 +100,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function School() {
+export default function Teacher() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
@@ -114,15 +114,11 @@ export default function School() {
 
   const navArr = [
     {link: "/", component: "Home", icon: HomeIcon},
-    {link: "/school", component: "Dashboard", icon: DashboardCustomizeIcon},
-    {link:"/school/class", component:"Class", icon: FormatListNumberedIcon},
-    {link:"/school/subject", component:"Subject", icon: SubjectIcon},
-    {link:"/school/students", component:"Students", icon: PeopleIcon},
-    {link:"/school/teachers", component:"Teachers", icon: PeopleAltIcon},
-    {link:"/school/schedule", component:"Schedule", icon: EventIcon},
-    {link:"/school/attendance", component:"Attendance", icon: RecentActorsIcon},
-    {link:"/school/examination", component:"Examination", icon: ExplicitIcon},
-    {link:"/school/notice", component:"Notice", icon: NotificationsIcon},
+    {link: "/teacher", component: "Your Details", icon: DashboardCustomizeIcon},
+    {link:"/teacher/schedule", component:"Schedule", icon: EventIcon},
+    {link:"/teacher/attendance", component:"Attendance", icon: RecentActorsIcon},
+    {link:"/teacher/examinations", component:"Examination", icon: ExplicitIcon},
+    {link:"/teacher/notice", component:"Notice", icon: NotificationsIcon},
   ]
 const navigate = useNavigate()
   const handleNavigation = (link) => {
@@ -185,30 +181,7 @@ const navigate = useNavigate()
           ))}
         </List>
         <Divider />
-        {/* <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List> */}
+        
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />

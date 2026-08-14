@@ -25,6 +25,16 @@ module.exports = {
                     return res.status(400).json({ message: "School image is required" });
                 }
 
+                const school = await School.findOne({email:fields.email[0]})
+                if(school){
+                    return res.status(409).json({
+                        success: false,
+                        message: "Email already exists"
+                    })
+                }else{
+
+                
+
                 const photo = files.image[0];
                 let filepath = photo.filepath;
                 let originalFilename = photo.originalFilename.replace(" ", "_")   //photo one
@@ -39,6 +49,7 @@ module.exports = {
                     school_name: fields.school_name[0],
                     email: fields.email[0],
                     owner_name: fields.owner_name[0],
+                    school_image: originalFilename,
                     password: hashPassWord
                 })
 
@@ -48,6 +59,7 @@ module.exports = {
                     data: savedSchool,
                     message: "School is registered successfully!"
                 })
+            }
             })
 
         } catch (error) {
