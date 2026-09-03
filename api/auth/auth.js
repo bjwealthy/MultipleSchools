@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken")
+//SCHOOL, STUDENT, TEACHER
 const authMiddleWare = (roles = []) => {
     return (req, res, next) => {
 
@@ -8,7 +9,7 @@ const authMiddleWare = (roles = []) => {
                 res.status(401).json({ success: false, message: "No token, authorization denied" })
             }
             const decoded = jwt.verify(token, process.env.JWT_SECRET)
-            if (decoded) {
+            if (decoded) { 
                 req.user = decoded;
                 if (roles.length > 0 && !roles.includes(req.user.role)) {
                     return res.status(403).json({ success: false, message: "Access denied" })

@@ -4,16 +4,16 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 
-//start app
-const app = express();
-
 //routers import
 const schoolRouter = require("./routers/school.router")
+//start app
+const app = express();
 
 //use middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(cors());
+const corsOption = {exposedHeaders:"Authorization"}
+app.use(cors(corsOption));
 app.use(cookieParser());
 
 //mongodb connection

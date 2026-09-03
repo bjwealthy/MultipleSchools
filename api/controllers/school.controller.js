@@ -61,7 +61,7 @@ module.exports = {
                 })
             }
             })
-
+  
         } catch (error) {
             res.status(500).json({
                 success: false,
@@ -74,7 +74,7 @@ module.exports = {
             const school = await School.findOne({ email: req.body.email });
             if (school) {
                 const isAuth = bcrypt.compareSync(req.body.password, school.password)
-
+ 
                 if (isAuth) {
 
                     const jwtSecret = process.env.JWT_SECRET;

@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.post('/register', registerSchool)
 router.get('/all', getAllSchools)
-router.get('/login',  loginSchool)
+router.post('/login',  loginSchool)
 router.patch('/update', authMiddleWare(['SCHOOL']), updateSchool)   //AUTH      
 router.get('/fetch-single', authMiddleWare(['SCHOOL']), getSchoolOwnData)
 

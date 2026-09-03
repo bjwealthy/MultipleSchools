@@ -61,7 +61,7 @@ export default function Register() {
       }).catch(e => {
         setMessage(e.response.data.message)
         setMessageType('error')
-        console.log("Error", e)
+        // console.log("Error", e)
       })
     }else{
        setMessage("Please add school image")
@@ -83,11 +83,12 @@ export default function Register() {
     backgroundSize:"cover",
     backgroundRepeat:"no-repeat",
     minHeight:"100vh",
-    paddingTop:"60px"
+    paddingTop:"60px",
+    paddingBottom: "60px"
     }}
   >
   {message && <MessageSnackbar message={message} type={messageType} handleClose={handleMessageClose}/>}
-    
+    <Typography variant='h2' sx={{textAlign:"center"}}>Register</Typography>
     <Box
       component="form"
       sx={{
@@ -183,7 +184,7 @@ export default function Register() {
         </p>
       )}
 
-      <Button type='submit' variant='text'>Submit</Button>
+      <Button type='submit' variant='contained'>Submit</Button>
     </Box>
     </Box>
 
