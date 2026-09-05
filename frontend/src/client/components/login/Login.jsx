@@ -49,16 +49,17 @@ export default function Login() {
 
 
     return (<Box component={'div'} sx={{
-        background: "url(https://pixabay.com/photos/books-student-study-education-1012088/)",
+        background: "url('https://i.ibb.co/rRjFz4Qj/carousel5.jpg')",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        minHeight: "100vh",
+        height: '100',
+        minHeight: "80vh",
         paddingTop: "60px",
         paddingBottom: "60px"
     }}
     >
         {message && <MessageSnackbar message={message} type={messageType} handleClose={handleMessageClose} />}
-        <Typography variant='h2' sx={{ textAlign: "center" }}>Login</Typography>
+        
         <Box
             component="form"
             sx={{
@@ -73,10 +74,8 @@ export default function Login() {
             noValidate
             autoComplete="off"
             onSubmit={Formik.handleSubmit}
-
         >
-
-
+            <Typography variant='h2' sx={{ textAlign: "center" }}>Login</Typography>
             <TextField
                 name="email"
                 label="Email"

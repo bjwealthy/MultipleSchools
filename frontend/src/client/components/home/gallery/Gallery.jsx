@@ -7,7 +7,7 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import React from 'react';
-import { Box } from '@mui/system';
+import { Box, textAlign } from '@mui/system';
 import axios from 'axios'
 
 export default function Gallery() {
@@ -37,6 +37,7 @@ export default function Gallery() {
 
     return (
         <Box>
+        <Typography variant='h4' sx={{textAlign:'center', marginTop:'40px', marginBottom:'20px'}}>Our Clients</Typography>
             <ImageList sx={{ width: '100%', height: 'auto' }}>
                 {schools.map((school) => (
                     <ImageListItem key={school.school_image}>
@@ -71,7 +72,11 @@ export default function Gallery() {
                         position: 'absolute',
                         top: '50%',
                         left: '50%',
-                        transform: 'translate(-50%, -50%)'
+                        transform: 'translate(-50%, -50%)',
+                        background: '#fff',
+                        padding: '10px',
+                        border: 'none',
+                        outline: 'none'
                     }}>
 
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>

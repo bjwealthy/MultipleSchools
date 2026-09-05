@@ -79,7 +79,7 @@ export default function Register() {
 
 
   return (<Box component={'div'} sx={{
-    background:"url(https://pixabay.com/photos/books-student-study-education-1012088/)",
+    background:"url(https://i.ibb.co/1fSvbRhz/carousel1.jpg)",
     backgroundSize:"cover",
     backgroundRepeat:"no-repeat",
     minHeight:"100vh",
