@@ -8,7 +8,7 @@ const carouselItems = [
     {
         image: 'https://i.ibb.co/rRjFz4Qj/carousel5.jpg',
         title: 'School Management Solutions',
-        description: 'Explore Our School Management Solutions at affordable Prices'
+        description: 'Explore Our School Management Solutions at Affordable Prices'
 
     },
     {
